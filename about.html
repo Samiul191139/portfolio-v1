@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+    <title>Portfolio - About Me</title>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1 class="logo">SK</h1>
+            <nav>
+                <div class="menu-toggle" id="mobile-menu">
+                    <i class="fas fa-bars"></i>
+                </div>
+                <ul class="nav-list">
+                    <li><a href="./index.html">Home</a></li>
+                    <li><a href="./about.html">About Me</a></li>
+                    <li><a href="#Projects">Projects</a></li>
+                    <li><a href="#Contact">Contact Me</a></li>
+                    <li><a href="#Certifications"><i class="fa-solid fa-circle-half-stroke"></i></a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <div class="first">
+        <div class="detail">
+            <h1>Samiul Karim Mazumder</h1>
+            <a href="#">DOWNLOAD CV</a>
+        </div>
+        <div class="images">
+            <img src="Assets/onlypics.png" alt="Samiul Karim Mazumder" class="man">
+        </div>
+    </div>
+
+    <script>
+        document.getElementById('mobile-menu').addEventListener('click', function() {
+        document.querySelector('.nav-list').classList.toggle('active');
+        });
+    </script>
+</body>
+</html>
