@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en" class="html">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+    <title>Portfolio</title>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1 class="logo">SK</h1>
+            <nav>
+                <div class="menu-toggle" id="mobile-menu">
+                    <i class="fas fa-bars"></i>
+                </div>
+                <ul class="nav-list">
+                    <li><a href="#Home">Home</a></li>
+                    <li><a href="#Projects">Projects</a></li>
+                    <li><a href="#Certifications">Certifications</a></li>
+                    <li><a href="#Contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <div class="first">
+        <div class="intro">
+            <div class="about">
+                <p>Hello there and welcome. I am</p>
+            </div>
+            <div class="welcome">
+                <p>SAMIUL KARIM MAZUMDER</p>
+            </div>
+            <div class="about">
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis debitis fuga cupiditate ut corrupti incidunt nam accusantium in facilis optio voluptates quos expedita provident, odio reprehenderit. Expedita quos nobis provident.</p>
+            </div>
+        </div>
+    </div>
+    <div class="np" id="Projects">
+        <p>Notable Projects</p>
+    </div>
+    <div class="more">
+        <div class="cards">
+            <div class="cardcont">
+                <h3>Card1</h3>
+                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Tempora in porro architecto ratione est. Esse adipisci possimus fuga unde est. Iusto beatae labore nam, facilis veritatis eius deleniti molestias assumenda?</p>
+                <a href="#" class="btn">See More</a>
+            </div>
+        </div>
+        <div class="cards">
+            <div class="cardcont">
+                <h3>Card2</h3>
+                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Tempora in porro architecto ratione est. Esse adipisci possimus fuga unde est. Iusto beatae labore nam, facilis veritatis eius deleniti molestias assumenda?</p>
+                <a href="#" class="btn">See More</a>
+            </div>
+        </div>
+        <div class="cards">
+            <div class="cardcont">
+                <h3>Card3</h3>
+                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Tempora in porro architecto ratione est. Esse adipisci possimus fuga unde est. Iusto beatae labore nam, facilis veritatis eius deleniti molestias assumenda?</p>
+                <a href="#" class="btn">See More</a>
+            </div>
+        </div>
+    </div>
+    <div class="np" id="Contact">
+        <p>Contact Me</p>
+    </div>
+    <div class="more">
+        <div class="card">
+            <div class="icon">
+                <a href="mailto:samikarim191139@gmail.com"><i class="fa-solid fa-envelope"></i></a>
+            </div>
+        </div>
+        <div class="card">
+            <div class="icon">
+                <a href="https://github.com/Samiul191139" target="_blank"><i class="fa-brands fa-github"></i></a>
+            </div>
+        </div>
+        <div class="card">
+            <div class="icon">
+                <a href="https://www.linkedin.com/in/samiulkarim191139/" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
+            </div>
+        </div>
+        <div class="card">
+            <div class="icon">                
+                <a href="https://discord.com/channels/@me" target="_blank"><i class="fa-brands fa-discord"></i></a>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // JavaScript for responsive navigation menu
+        const mobileMenu = document.getElementById('mobile-menu');
+        const navList = document.querySelector('.nav-list');
+
+        mobileMenu.addEventListener('click', () => {
+            navList.classList.toggle('active');
+        });
+    </script>
+</body>
+</html>

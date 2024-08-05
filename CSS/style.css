@@ -1,0 +1,264 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100..900&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Montserrat", sans-serif;
+}
+
+body {
+  background: #17153B;
+  color: #F6F6F6;
+  line-height: 1.6;
+}
+
+h2, .np {
+  text-align: center;
+  padding-bottom: 10px;
+  padding-top: 20px;
+  color: #F6F6F6;
+  font-size: 2.5rem;
+}
+
+main {
+  padding: 20px;
+  margin: 0 40px;
+}
+
+.container {
+  width: 90%;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+header {
+  background: #433D8B;
+  padding: 4px 0;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.logo {
+  font-size: 2rem;
+  color: #F6F6F6;
+  font-weight: bold;
+}
+
+nav {
+  display: flex;
+  align-items: center;
+}
+
+.nav-list {
+  display: flex;
+  list-style: none;
+}
+
+nav ul {
+  display: flex;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+nav li {
+  margin-left: 40px;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  position: relative;
+}
+
+nav a {
+  color: #F6F6F6;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-size: 1rem;
+  transition: color 0.3s ease;
+}
+
+nav a:hover {
+  color: #FFD700; /* Gold color for hover effect */
+}
+
+nav a::before {
+  content: '';
+  display: block;
+  height: 5px;
+  background-color: #FFD700; /* Gold underline */
+  position: absolute;
+  bottom: 0;
+  width: 0%;
+  transition: width 250ms ease-in-out;
+}
+
+nav a:hover::before {
+  width: 100%;
+}
+
+.menu-toggle {
+  display: none;
+  cursor: pointer;
+  color: #F6F6F6;
+  font-size: 24px;
+}
+
+.first {
+  background: linear-gradient(to bottom right, #292762, #433D8B);
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
+  text-align: center;
+  padding: 5rem 0;
+}
+
+.welcome {
+  font-size: 3rem;
+  padding-bottom: 20px;
+  font-weight: bold;
+}
+
+.about {
+  font-size: 1.25rem;
+  padding-bottom: 30px;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.np {
+  padding: 3rem 0 1rem;
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+.more {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 20px;
+  padding: 2rem;
+}
+
+.cards {
+  flex: 1;
+  min-width: 280px;
+  max-width: 320px;
+  border-radius: 15px;
+  overflow: hidden;
+  background-color: #292762;
+  box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.2);
+  margin: 20px;
+  transition: transform 0.3s ease-in-out;
+}
+
+.card:hover {
+  transform: translateY(-10px);
+}
+
+.card a {
+  color: #F6F6F6;
+}
+
+.cardcont {
+  padding: 20px;
+  text-align: center;
+}
+
+.cardcont h3 {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+}
+
+.cardcont p {
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+.cardcont .btn {
+  display: inline-block;
+  padding: 8px 16px;
+  background-color: #433D8B;
+  text-decoration: none;
+  border-radius: 4px;
+  margin-top: 15px;
+  color: #F6F6F6;
+  transition: background-color 0.3s ease;
+}
+
+.cardcont .btn:hover {
+  background-color: #17153B;
+}
+
+.icon {
+  text-align: center;
+  margin: 10px 0;
+}
+
+.fa-solid,
+.fa-brands {
+  font-size: 2rem;
+  line-height: 50px;
+  border-radius: 50%;
+  transition: transform 0.3s linear, color 0.3s linear;
+}
+
+.card:hover .fa-solid,
+.card:hover .fa-brands {
+  transform: scale(1.2);
+  color: #FFD700;
+}
+
+@media screen and (max-width: 1024px) {
+  .nav-list {
+    justify-content: center;
+  }
+  nav li {
+    margin-left: 20px;
+  }
+  .welcome {
+    font-size: 2.5rem;
+  }
+  .about {
+    font-size: 1rem;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .container {
+    flex-direction: column;
+    padding: 20px;
+  }
+  .menu-toggle {
+    display: block;
+  }
+  .nav-list {
+    position: fixed;
+    top: 110px;
+    right: 0;
+    background: rgba(67, 61, 139, 0.9);
+    width: 100%;
+    height: 0;
+    overflow: hidden;
+    flex-direction: column;
+    align-items: center;
+    transition: all 0.3s ease-in-out;
+    z-index: 1000;
+  }
+  
+  .nav-list.active {
+    height: calc(100vh - 60px);
+    overflow-y: auto;
+  }
+  
+  .nav-list li {
+    margin: 10px 0;
+  }
+  .intro,
+  .np {
+    padding-left: 5vw;
+    padding-right: 5vw;
+  }
+  .cards {
+    width: 100%;
+    margin: 10px 0;
+  }
+}
