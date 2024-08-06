@@ -266,14 +266,21 @@ nav a:hover::before {
 
 /* about */
 
+.one {
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
+  text-align: center;
+  padding: 5rem 0;
+  position: relative; /* Ensures absolute positioning within this container */
+}
+
 .detail {
-  padding: 13% 13%;
+  padding: 10% 10%;
   text-align: left;
 }
 
 .detail h1 {
-  font-size: 4em;
-  margin-bottom: 0.5em;
+  font-size: 4em; /* Large font size for desktop */
+  margin-bottom: 0.3em;
 }
 
 .detail a {
@@ -286,53 +293,64 @@ nav a:hover::before {
   transition: background-color 0.3s;
 }
 
+.detail p{
+  font-size: 1.25rem;
+  color: #F6F6F6;
+  padding-bottom: 25px;
+  margin-bottom: 0.5em;
+}
+
 .detail a:hover {
   background-color: #5a52a5;
 }
 
-
 .images {
-  top: 15%;
-  right: 10%;
-  bottom: 5%;
   position: absolute;
-  bottom: 0;
-  max-width: 600px;
+  top: 10%;
+  right: 10%;
+  max-width: 500px;
+  width: 100%; /* Responsive width */
 }
 
 .images img {
   width: 100%;
-  height: auto; /* Keep image aspect ratio */
+  height: auto; /* Maintains aspect ratio */
+  border-radius: 50%; /* Circular images */
+  box-shadow: 0 0 0 4px #433D8B, 0 0 0 8px #F6F6F6; /* Styled shadow for depth */
 }
 
-
 @media (max-width: 1280px) {
-  .detail {
-    text-align: left;
-  }
-
   .detail h1 {
-    font-size: 2em;
-    margin-bottom: 0.5em;
+    font-size: 3em;
   }
 
   .images {
-  /* display: none; */
-  max-width: 400px;
+    max-width: 400px;
   }
 }
 
-@media (max-width: 800px) {
+@media (max-width: 1024px) {
+  .one {
+    padding: 1rem 0;
+  }
+
   .detail {
     padding: 10px;
     text-align: center;
   }
 
   .images {
+    padding: 50px;
     position: relative;
+    top: auto;
+    right: auto;
     max-width: 100%;
-    bottom: 0;
-    right: 0;
+  }
+}
+
+@media (max-width: 600px) {
+  .detail h1 {
+    font-size: 2em; /* Small font size for mobile devices */
   }
 
   header nav {
@@ -340,17 +358,12 @@ nav a:hover::before {
   }
 
   .nav-list {
-    flex-direction: column;
-    display: none;
+    display: none; /* Hide by default on mobile */
   }
 
   .nav-list.active {
-    display: flex;
-  }
-}
-
-@media (max-width: 600px) {
-  .detail h1 {
-    font-size: 2em;
+    display: flex; /* Show when activated */
+    flex-direction: column;
+    width: 100%; /* Full width */
   }
 }
