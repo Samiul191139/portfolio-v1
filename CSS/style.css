@@ -151,8 +151,8 @@ nav a:hover::before {
 }
 
 .cards img{
-  width: 320px;
-  height: 180px;
+  width: 100%;
+  height: auto;
 }
 
 .ss:hover{
@@ -220,13 +220,10 @@ nav a:hover::before {
   color: #FFD700;
 }
 
-/* .github-contributions{
-  max-width: 200%; 
+.graph {
+  width: 100%;
+  max-width: 1080px;
   height: auto;
-} */
-
-.graph{
-  width: 1080px;
 }
 
 @media screen and (max-width: 1024px) {
@@ -284,6 +281,7 @@ nav a:hover::before {
     margin: 10px 0;
   }
 }
+
 
 
 /* about */
@@ -440,7 +438,7 @@ nav a:hover::before {
   padding-bottom: 30px;
   text-align: left;
   box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
-  background-color: #433D8B;
+  background-color: #292762;
 }
 
 .skills p{
@@ -461,7 +459,7 @@ nav a:hover::before {
 }
 
 .skill-badge {
-  background-color: #292762;
+  background-color: #17153B;
   color: #F6F6F6;
   border-radius: 12px;
   padding: 10px 15px;
@@ -492,4 +490,43 @@ nav a:hover::before {
   padding-bottom: 30px;
   text-align: left;
   box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.box{
+  border: 1px solid white;
+  padding: 20px;
+  border-radius: 4px;
+  margin-bottom: 20px;
+  background-color: #292762;
+}
+
+.box p{
+  font-size: 2em;
+}
+
+.text p{
+  padding-top: 20px;
+  font-size: 20px;
+}
+
+.view{
+  display: inline-block;
+  padding: 8px 16px;
+  background-color: #433D8B;
+  border-radius: 4px;
+  margin-top: 15px;
+  color: #F6F6F6;
+  transition: background-color 0.3s ease;
+}
+
+.view a{
+  color: #F6F6F6;
+  font-size: 16px;
+  text-decoration: none;
+  font-weight: bold;
+  
+}
+
+.view:hover {
+  background-color: #5a52a5;
 }
