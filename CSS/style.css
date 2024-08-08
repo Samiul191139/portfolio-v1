@@ -16,7 +16,7 @@ body {
 h2, .np {
   text-align: center;
   padding-bottom: 10px;
-  padding-top: 20px;
+  padding-top: 10px;
   color: #F6F6F6;
   font-size: 2.5rem;
 }
@@ -125,7 +125,7 @@ nav a:hover::before {
 }
 
 .np {
-  padding: 3rem 0 1rem;
+  padding: 2rem 0 1rem;
   font-size: 2rem;
   font-weight: bold;
 }
@@ -148,6 +148,19 @@ nav a:hover::before {
   box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.2);
   margin: 20px;
   transition: transform 0.3s ease-in-out;
+}
+
+.cards img{
+  width: 320px;
+  height: 180px;
+}
+
+.ss:hover{
+  scale: 1.2;
+}
+
+.cards:hover{
+  transform: translateY(-10px);
 }
 
 .card:hover {
@@ -205,6 +218,15 @@ nav a:hover::before {
 .card:hover .fa-brands {
   transform: scale(1.2);
   color: #FFD700;
+}
+
+/* .github-contributions{
+  max-width: 200%; 
+  height: auto;
+} */
+
+.graph{
+  width: 1080px;
 }
 
 @media screen and (max-width: 1024px) {
@@ -267,14 +289,14 @@ nav a:hover::before {
 /* about */
 
 .one {
-  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
+  box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.6);
   text-align: center;
   padding: 5rem 0;
   position: relative; /* Ensures absolute positioning within this container */
 }
 
 .detail {
-  padding: 10% 10%;
+  padding: 3% 10%;
   text-align: left;
 }
 
@@ -294,6 +316,7 @@ nav a:hover::before {
 }
 
 .detail p{
+  width: 50%;
   font-size: 1.25rem;
   color: #F6F6F6;
   padding-bottom: 25px;
@@ -307,7 +330,7 @@ nav a:hover::before {
 .images {
   position: absolute;
   top: 10%;
-  right: 10%;
+  right: 11%;
   max-width: 500px;
   width: 100%; /* Responsive width */
 }
@@ -316,7 +339,32 @@ nav a:hover::before {
   width: 100%;
   height: auto; /* Maintains aspect ratio */
   border-radius: 50%; /* Circular images */
-  box-shadow: 0 0 0 4px #433D8B, 0 0 0 8px #F6F6F6; /* Styled shadow for depth */
+  background-color: #17153B;
+  box-shadow: 0 0 0 4px #433D8B, 0 0 0 4px #F6F6F6; /* Styled shadow for depth */
+}
+
+.table{
+  background-color: #5a52a5;
+}
+.education-table {
+  width: 100%;
+  max-width: 100%;
+  margin-top: 1em;
+  border-collapse: collapse;
+  color: #F6F6F6; /* Text color */
+}
+
+.education-table td {
+  padding: 10px 15px;
+  border-bottom: 1px solid #433D8B; /* Adds a border under each row */
+}
+
+.education-table tr:nth-child(even) {
+  background-color: #292762; /* Alternate row background */
+}
+
+.education-table tr:hover {
+  background-color: #433D8B; /* Hover effect */
 }
 
 @media (max-width: 1280px) {
@@ -325,7 +373,8 @@ nav a:hover::before {
   }
 
   .images {
-    max-width: 400px;
+    top: 20%;
+    max-width: 300px;
   }
 }
 
@@ -337,6 +386,10 @@ nav a:hover::before {
   .detail {
     padding: 10px;
     text-align: center;
+  }
+
+  .detail p{
+    width: 100%;
   }
 
   .images {
@@ -353,6 +406,11 @@ nav a:hover::before {
     font-size: 2em; /* Small font size for mobile devices */
   }
 
+  .detail p{
+    padding: 10px;
+    width: 100%;
+  }
+
   header nav {
     flex-direction: column;
   }
@@ -366,4 +424,72 @@ nav a:hover::before {
     flex-direction: column;
     width: 100%; /* Full width */
   }
+
+  .images img{
+    max-width: 70%;
+    align-items: center;
+  }
+
+  .skills-list {
+    flex-direction: column;
+  }
+}
+
+.detail2{
+  padding: 0% 10%;
+  padding-bottom: 30px;
+  text-align: left;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
+  background-color: #433D8B;
+}
+
+.skills p{
+  font-size: 2em;
+  font-weight: bold;
+  padding-bottom: 15px;
+}
+
+.skills {
+  padding: 20px 0;
+}
+
+.skills-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 15px;
+}
+
+.skill-badge {
+  background-color: #292762;
+  color: #F6F6F6;
+  border-radius: 12px;
+  padding: 10px 15px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 1rem;
+  transition: transform 0.3s ease, background-color 0.3s ease;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.skill-badge i {
+  font-size: 1.5rem;
+  transition: color 0.3s ease;
+}
+
+.skill-badge:hover {
+  background-color: #433D8B;
+  transform: translateY(-5px);
+}
+
+.skill-badge:hover i {
+  color: #FFD700;
+}
+
+.detail3{
+  padding: 0% 10%;
+  padding-bottom: 30px;
+  text-align: left;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
 }
