@@ -205,6 +205,7 @@ nav a:hover::before {
 }
 
 .cardcont p {
+  padding-top: 20px;
   font-size: 1rem;
   line-height: 1.5;
   font-weight: 500;
@@ -272,7 +273,7 @@ nav a:hover::before {
   }
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 600px) {
   .container {
     flex-direction: column;
     padding: 20px;
@@ -307,6 +308,7 @@ nav a:hover::before {
     padding-left: 5vw;
     padding-right: 5vw;
   }
+
   .cards {
     width: 100%;
     margin: 10px 0;
