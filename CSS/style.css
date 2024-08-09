@@ -135,7 +135,7 @@ nav a:hover::before {
   justify-content: center;
   flex-wrap: wrap;
   gap: 20px;
-  padding: 2rem;
+  padding: 1rem;
 }
 
 .cards {
@@ -155,7 +155,16 @@ nav a:hover::before {
   height: auto;
 }
 
+.cards .ss2{
+  width: 320px;
+  height: 180px;
+}
+
 .ss:hover{
+  scale: 1.2;
+}
+
+.ss2:hover{
   scale: 1.2;
 }
 
