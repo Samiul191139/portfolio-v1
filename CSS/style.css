@@ -11,6 +11,7 @@ body {
   background: #17153B;
   color: #F6F6F6;
   line-height: 1.6;
+  margin-top: 60px; /* Add top margin to account for fixed header height */
 }
 
 h2, .np {
@@ -35,6 +36,11 @@ main {
 }
 
 header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
   background: #433D8B;
   padding: 4px 0;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -113,7 +119,7 @@ nav a:hover::before {
 
 .welcome {
   font-size: 3rem;
-  padding-bottom: 20px;
+  /* padding-bottom: 20px; */
   font-weight: bold;
 }
 
@@ -123,6 +129,11 @@ nav a:hover::before {
   padding-bottom: 20px;
   max-width: 1200px;
   margin: 0 auto;
+}
+
+.sml{
+  font-size: 1rem;
+  padding-bottom: 36px;
 }
 
 .np {
@@ -158,11 +169,12 @@ nav a:hover::before {
 .cards img{
   width: 100%;
   height: auto;
+  transition: 0.2s ease-in-out;
 }
 
 .cards .ss2{
   width: 420px;
-  height: 225px;
+  height: 236.25px;
 }
 
 .ss:hover{
@@ -184,6 +196,35 @@ nav a:hover::before {
 .card a {
   color: #F6F6F6;
 }
+
+.stats-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: center;
+  background-color: #433D8B;
+  padding: 20px 180px;
+  color: white;
+  font-size: 1rem;
+}
+
+.stats-card {
+  text-align: center;
+  flex: 1 1 20%; /* Flex grow, flex shrink, flex basis */
+  margin: 10px;
+}
+
+.stats-card h1 {
+  font-size: 2.5rem;
+  color: #F6F6F6;
+  font-weight: bold;
+  margin-bottom: 0;
+}
+
+.stats-card p {
+  color: #ccc;
+}
+
 
 .git{
   background-color: #292762;
@@ -258,11 +299,64 @@ nav a:hover::before {
   height: auto;
 }
 
+@media (max-width: 768px) {
+  .stats-container {
+      padding: 10px 0;
+  }
+
+  .stats-card {
+      flex: 1 1 45%;
+  }
+
+  .stats-card h1 {
+      font-size: 2rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .cards{
+    min-width: 320px;
+    max-width: 320px;
+  }
+  .cards .ss2{
+    width: 290px;
+    height: 163px;
+  }
+  .stats-container {
+      flex-direction: column;
+  }
+
+  .stats-card {
+      flex: 1 1 100%;
+  }
+
+  .stats-card h1 {
+      font-size: 1.5rem;
+  }
+}
+
+@media (max-width: 320px) { 
+  .container {
+    flex-direction: row;
+  }
+  .stats-card {
+      padding: 5px 0; /* Reduced padding to save space */
+  }
+
+  .stats-card h1 {
+      font-size: 1.2rem; /* Further reduced font size for numbers */
+  }
+
+  .stats-card p {
+      font-size: 0.8rem; /* Smaller paragraph font size to ensure text fits */
+  }
+}
+
 @media screen and (max-width: 1024px) {
   .nav-list {
     justify-content: center;
   }
-  nav li {
+  .nav li {
     margin-left: 20px;
   }
   .welcome {
@@ -274,16 +368,20 @@ nav a:hover::before {
 }
 
 @media screen and (max-width: 600px) {
+  .body {
+    margin-top: 80px;
+  }
   .container {
-    flex-direction: column;
-    padding: 20px;
+    flex-direction: row;
+    padding: 10px;
   }
   .menu-toggle {
     display: block;
+    margin-left: auto;
   }
   .nav-list {
     position: fixed;
-    top: 110px;
+    top: 50px;
     right: 0;
     background: rgba(67, 61, 139, 0.9);
     width: 100%;
@@ -292,11 +390,11 @@ nav a:hover::before {
     flex-direction: column;
     align-items: center;
     transition: all 0.3s ease-in-out;
-    z-index: 1000;
+    z-index: 999;
   }
   
   .nav-list.active {
-    height: calc(100vh - 60px);
+    height: calc(100vh - 200px);
     overflow-y: auto;
   }
   
@@ -312,6 +410,7 @@ nav a:hover::before {
   .cards {
     width: 100%;
     margin: 10px 0;
+    padding: 15px;
   }
 }
 
@@ -520,6 +619,7 @@ nav a:hover::before {
 
 .detail3{
   padding: 0% 10%;
+  padding-top: 30px;
   padding-bottom: 30px;
   text-align: left;
   box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
@@ -566,4 +666,71 @@ nav a:hover::before {
 
 .view:hover {
   background-color: #5a52a5;
+}
+
+/* project */
+
+.project-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    padding: 20px;
+}
+
+.project-card {
+    width: 1280px;
+    height: 720px;
+    background-color: #f5f5f5;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.project-carousel {
+    position: relative;
+}
+
+.project-carousel img {
+    width: 100%;
+    height: 720px;
+    display: none;
+}
+
+.project-carousel img.active {
+    display: block;
+}
+
+.carousel-control {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    padding: 10px;
+    z-index: 10;
+}
+
+.prev {
+    left: 10px;
+}
+
+.next {
+    right: 10px;
+}
+
+.project-info {
+    padding: 15px;
+}
+
+.btn {
+    background-color: #433D8B;
+    color: white;
+    text-decoration: none;
+    padding: 8px 16px;
+    display: inline-block;
+    border-radius: 4px;
+    margin-top: 10px;
 }

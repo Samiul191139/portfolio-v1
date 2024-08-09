@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./CSS/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+    <title>Portfolio - Projects</title>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1 class="logo">SK</h1>
+            <nav>
+                <div class="menu-toggle" id="mobile-menu">
+                    <i class="fas fa-bars"></i>
+                </div>
+                <ul class="nav-list">
+                    <li><a href="./index.html">Home</a></li>
+                    <li><a href="./about.html">About Me</a></li>
+                    <li><a href="./projects.html">Projects</a></li>
+                    <li><a href="#Contact">Contact Me</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <main>
+        <div class="project-container">
+            <!-- Example Project Card -->
+            <div class="project-card">
+                <div class="project-carousel">
+                    <button class="carousel-control prev" onclick="changeImage(this, -1)">&#10094;</button>
+                    <img src="./Assets/login_page.PNG" alt="Project Image 1" class="active">
+                    <img src="./Assets/dashboard.PNG" alt="Project Image 2" style="display:none;">
+                    <!-- Add more images as needed -->
+                    <button class="carousel-control next" onclick="changeImage(this, 1)">&#10095;</button>
+                </div>
+                <div class="project-info">
+                    <h3>Project Title</h3>
+                    <p>Description of the project goes here...</p>
+                    <a href="#" class="btn">See More</a>
+                </div>
+            </div>
+            <!-- Additional project cards can be added similarly -->
+        </div>
+    </main>
+    <script>
+        function changeImage(button, change) {
+            let carousel = button.parentNode;
+            let imgs = carousel.querySelectorAll('img');
+            let activeIndex = [...imgs].findIndex(img => img.classList.contains('active'));
+            imgs[activeIndex].classList.remove('active');
+            imgs[activeIndex].style.display = 'none';
+            let newIndex = (activeIndex + change + imgs.length) % imgs.length;
+            imgs[newIndex].classList.add('active');
+            imgs[newIndex].style.display = 'block';
+        }
+    </script>
+</body>
+</html>
