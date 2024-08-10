@@ -18,8 +18,10 @@
                 <ul class="nav-list">
                     <li><a href="./index.html">Home</a></li>
                     <li><a href="./about.html">About Me</a></li>
-                    <li><a href="./projects.html">Projects</a></li>
+                    <li><a href="#projects.html">Projects</a></li>
                     <li><a href="#Contact">Contact Me</a></li>
+                    <li><a href="#mode">Mode</a></li>
+                    <!-- <li><a href="#mode"><i class="fa-solid fa-circle-half-stroke"></i></a></li> -->
                 </ul>
             </nav>
         </div>
@@ -31,30 +33,90 @@
                 <div class="project-carousel">
                     <button class="carousel-control prev" onclick="changeImage(this, -1)">&#10094;</button>
                     <img src="./Assets/login_page.PNG" alt="Project Image 1" class="active">
-                    <img src="./Assets/dashboard.PNG" alt="Project Image 2" style="display:none;">
+                    <img src="./Assets/dashboard.PNG" alt="Project Image 2">
+                    <img src="./Assets/employee_page.PNG" alt="Project Image 2">
+                    <img src="./Assets/view_tasks_emp.PNG" alt="Project Image 2">
+                    <!-- Add more images as needed -->
+                    <button class="carousel-control next" onclick="changeImage(this, 1)">&#10095;</button>
+                </div>
+                <div class="project-info">
+                    <h3>Project Task Management System</h3>
+                    <p>Developed using procedural programming principles, designed to streamline project planning, task allocation, and progress tracking. This Project uses simplified Project Assignment and Project Status updating structure to ensure employees complete their task in due time.</p>
+                    <button class="btn see-images">Project Images</button>
+                    <button class="btn see-images">Details</button>
+                </div>
+            </div>
+            <!-- Additional project cards can be added similarly -->
+            <div class="project-card">
+                <div class="project-carousel">
+                    <button class="carousel-control prev" onclick="changeImage(this, -1)">&#10094;</button>
+                    <img src="./Assets/ss1.png" alt="Project Image 1" class="active">
+                    <img src="./Assets/ss2.png" alt="Project Image 2">
+                    <!-- Add more images as needed -->
+                    <button class="carousel-control next" onclick="changeImage(this, 1)">&#10095;</button>
+                </div>
+                <div class="project-info">
+                    <h3>Flight Management & Ticket Booking System</h3>
+                    <p>It is my first small project based on C++. I named it "Flight-Management-and-Ticket-Booking-System". Flight Booking System without any unecessay complicated functions.</p>
+                    <button class="btn see-images">Project Images</button>
+                    <button class="btn see-images">Details</button>
+                </div>
+            </div>
+
+            <div class="project-card">
+                <div class="project-carousel">
+                    <button class="carousel-control prev" onclick="changeImage(this, -1)">&#10094;</button>
+                    <img src="#" alt="Project Image 1" class="active">
+                    <img src="#" alt="Project Image 2">
                     <!-- Add more images as needed -->
                     <button class="carousel-control next" onclick="changeImage(this, 1)">&#10095;</button>
                 </div>
                 <div class="project-info">
                     <h3>Project Title</h3>
-                    <p>Description of the project goes here...</p>
-                    <a href="#" class="btn">See More</a>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. At quo quisquam nemo veniam accusantium et, adipisci fugit neque suscipit placeat, modi numquam similique non, iure amet autem natus nisi officiis?</p>
+                    <button class="btn see-images">Project Images</button>
+                    <button class="btn see-images">Details</button>
                 </div>
             </div>
-            <!-- Additional project cards can be added similarly -->
         </div>
     </main>
     <script>
         function changeImage(button, change) {
-            let carousel = button.parentNode;
-            let imgs = carousel.querySelectorAll('img');
-            let activeIndex = [...imgs].findIndex(img => img.classList.contains('active'));
-            imgs[activeIndex].classList.remove('active');
-            imgs[activeIndex].style.display = 'none';
-            let newIndex = (activeIndex + change + imgs.length) % imgs.length;
+        let carousel = button.parentNode;
+        let imgs = carousel.querySelectorAll('img');
+        let activeIndex = [...imgs].findIndex((img) => img.classList.contains('active'));
+
+        // Remove active class
+        imgs[activeIndex].classList.remove('active');
+
+        // Calculate the new index
+        let newIndex = (activeIndex + change + imgs.length) % imgs.length;
+
+        // Prepare the new image for entry
+        imgs[newIndex].classList.add('transitioning');
+        imgs[newIndex].style.opacity = 0;
+        imgs[newIndex].style.display = 'block';
+
+        setTimeout(() => {
+            // Transition the new image into view
             imgs[newIndex].classList.add('active');
-            imgs[newIndex].style.display = 'block';
+            imgs[newIndex].classList.remove('transitioning');
+            imgs[newIndex].style.opacity = 1;
+
+            // Hide the old image
+            imgs[activeIndex].style.display = 'none';
+        }, 20); // Small timeout to ensure the transition kicks in
         }
+
+
+
+        document.querySelectorAll(".btn.see-images").forEach((button) => {
+            button.addEventListener("click", () => {
+                const carousel = button.parentNode.previousElementSibling; // Select the carousel element
+                const isExpanded = carousel.classList.toggle("expanded");
+                button.textContent = isExpanded ? "Hide Images" : "Project Images";
+            });
+        });
     </script>
 </body>
 </html>
