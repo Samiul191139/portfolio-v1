@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./CSS/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+    <title>Portfolio - Contact Me</title>
+</head>
+<body>
+    <!-- <img src="./Assets/peakpx.jpg" class="background"> -->
+    <header>
+        <div class="container">
+            <h1 class="logo">SK</h1>
+            <nav>
+                <div class="menu-toggle" id="mobile-menu">
+                    <i class="fas fa-bars"></i>
+                </div>
+                <ul class="nav-list">
+                    <li><a href="./index.html">Home</a></li>
+                    <li><a href="./about.html">About Me</a></li>
+                    <li><a href="./projects.html">Projects</a></li>
+                    <li><a href="#Contact">Contact Me</a></li>
+                    <li><a href="#mode">Mode</a></li>
+                    <!-- <li><a href="#mode"><i class="fa-solid fa-circle-half-stroke"></i></a></li> -->
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <main>
+        <div class="contact-container">
+            <form action="https://api.web3forms.com/submit" method="POST" class="contact-left">
+                <div class="contact-left-title">
+                    <h2>Want to Get in Touch?</h2>
+                    <hr>
+                </div>
+                <input type="hidden" name="access_key" value="fef6f107-4d3f-49b0-9d79-f194273bc74e">
+                <input type="text" name="name" placeholder="Your Name" class="contact-inputs" required>
+                <input type="email" name="email" placeholder="Your Mail Address" class="contact-inputs" required>
+                <textarea name="message" placeholder="Your Message" class="contact-inputs" required></textarea>
+                <button type="submit">Submit<img src="./Assets/icons8-arrow-96.png"></button>
+                <div class="contact-social-links">
+                    <div class="icon">
+                        <a href="mailto:samikarim191139@gmail.com"><i class="fa-solid fa-envelope"></i></a>
+                    </div>
+                    <div class="icon">
+                        <a href="https://github.com/Samiul191139"><i class="fa-brands fa-github"></i></a>
+                    </div>
+                    <div class="icon">
+                        <a href="https://www.linkedin.com/in/samiulkarim191139/"><i class="fa-brands fa-linkedin"></i></a>
+                    </div>
+                    <div class="icon">
+                        <a href="https://discord.com/channels/@me"><i class="fa-brands fa-discord"></i></a>
+                    </div>
+                </div>
+            </form>
+            
+            <div class="contact-right">
+                <img src="./Assets/—Pngtree—developers are coding programs on_14867886.png" alt="">
+            </div>
+        </div>
+    </main>
+
+    <script>
+        document.getElementById('mobile-menu').addEventListener('click', function() {
+            document.querySelector('.nav-list').classList.toggle('active');
+        });
+    </script>
+</body>
+</html>
