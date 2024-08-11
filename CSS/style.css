@@ -1,4 +1,36 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+:root {
+  --about: #a9a9a9,#f6f6f6, #aaaaaa;
+  --button:#a9a9a9;
+  --box: #e8e9eb;
+  --background-color: #ffffff;
+  --text-color: #433d8b;
+  --text-reverse: #f6f6f6;
+  --primary-color: #433D8B;
+  --secondary-color: #E8E9EB;
+  --accent-color: #433D8B;
+  --header-background: #F6F6F6;
+  --card-background: #f1f1f1;
+  --link-color: #433D8B;
+  --button-background: #433D8B;
+}
+
+body.dark-mode {
+  --about: #17153B, #433D8B, #292762;
+  --button:#17153B;
+  --box: #f6f6f6;
+  --background-color: #17153B;
+  --text-color: #F6F6F6;
+  --text-reverse: #17153B;
+  --primary-color: #433D8B;
+  --secondary-color: #292762;
+  --accent-color: #FFD700;
+  --header-background: #433D8B;
+  --card-background: #292762;
+  --link-color: #FFD700;
+  --button-background: #433D8B;
+}
 
 * {
   margin: 0;
@@ -8,17 +40,46 @@
 }
 
 body {
-  background: #17153B;
-  color: #F6F6F6;
+  background-color: var(--background-color);
+  color: var(--text-color);
   line-height: 1.6;
-  margin-top: 60px; /* Add top margin to account for fixed header height */
+  margin-top: 60px;
+  transition: background-color 0.5s, color 0.5s;
+  animation: none;
+}
+
+.theme-icon {
+  cursor: pointer;
+  font-size: 1rem;
+  color: #F6F6F6;
+  transition: color var(--transition-duration);
+}
+
+body.dark-mode .theme-icon {
+  color: #FFD700;
+}
+
+@keyframes fade {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 0.5;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+body.switching {
+  animation: fade 0.8s ease-in-out;
 }
 
 h2, .np {
   text-align: center;
   padding-bottom: 10px;
   padding-top: 10px;
-  color: #F6F6F6;
+  color: var(--text-color);
   font-size: 2.5rem;
 }
 
@@ -41,14 +102,14 @@ header {
   left: 0;
   width: 100%;
   z-index: 1000;
-  background: #433D8B;
+  background: var(--header-background);
   padding: 4px 0;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 .logo {
   font-size: 2rem;
-  color: #F6F6F6;
+  color: var(--text-color);
   font-weight: bold;
 }
 
@@ -62,6 +123,13 @@ nav {
   list-style: none;
 }
 
+.nav-list li a.active {
+  color: #fff;
+  background-color: #333;
+  border-radius: 5px;
+  padding: 5px 10px;
+}
+
 nav ul {
   display: flex;
   margin: 0;
@@ -72,27 +140,28 @@ nav ul {
 nav li {
   margin-left: 40px;
   padding-top: 20px;
-  padding-bottom: 15px;
+  padding-bottom: 5px;
   position: relative;
 }
 
 nav a {
-  color: #F6F6F6;
+  color: var(--text-color);
   text-decoration: none;
   text-transform: uppercase;
   font-size: 1rem;
+  font-weight: 40px;
   transition: color 0.3s ease;
 }
 
 nav a:hover {
-  color: #FFD700; /* Gold color for hover effect */
+  color: var(--accent-color); /* Gold color for hover effect */
 }
 
 nav a::before {
   content: '';
   display: block;
   height: 5px;
-  background-color: #FFD700; /* Gold underline */
+  background-color: var(--accent-color); /* Gold underline */
   position: absolute;
   bottom: 0;
   width: 0%;
@@ -106,13 +175,12 @@ nav a:hover::before {
 .menu-toggle {
   display: none;
   cursor: pointer;
-  color: #F6F6F6;
+  color: var( --text-color);
   font-size: 24px;
 }
 
 .first {
-  /* background: #292762; */
-  background: linear-gradient(#17153B, #433D8B, #292762);
+  background: linear-gradient(var(--about));
   box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
   text-align: center;
   padding: 5rem 0;
@@ -157,7 +225,7 @@ nav a:hover::before {
   max-width: 320px;
   border-radius: 15px;
   overflow: hidden;
-  background-color: #292762;
+  background-color: var(--secondary-color);
   box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.2);
   margin: 20px;
   display: flex;
@@ -195,7 +263,7 @@ nav a:hover::before {
 }
 
 .card a {
-  color: #F6F6F6;
+  color: var( --text-color);
 }
 
 .stats-container {
@@ -203,7 +271,7 @@ nav a:hover::before {
   flex-wrap: wrap;
   justify-content: space-around;
   align-items: center;
-  background-color: #433D8B;
+  background-color: var(--header-background);
   padding: 20px 180px;
   color: white;
   font-size: 1rem;
@@ -217,7 +285,7 @@ nav a:hover::before {
 
 .stats-card h1 {
   font-size: 2.5rem;
-  color: #F6F6F6;
+  color: var( --text-color);
   font-weight: bold;
   margin-bottom: 0;
 }
@@ -228,7 +296,7 @@ nav a:hover::before {
 
 
 .git{
-  background-color: #292762;
+  background-color: var(--secondary-color);
 }
 
 .cardcont {
@@ -256,16 +324,18 @@ nav a:hover::before {
 .cardcont .btn {
   display: inline-block;
   padding: 8px 16px;
-  background-color: #433D8B;
+  background-color: var(--button-background);
   text-decoration: none;
   border-radius: 4px;
   margin-top: 15px;
   color: #F6F6F6;
   transition: background-color 0.3s ease;
+  font-weight: bold;
 }
 
 .cardcont .btn:hover {
-  background-color: #17153B;
+  background-color: var(--button);
+  color: var(--text-color);
 }
 
 .button {
@@ -286,13 +356,13 @@ nav a:hover::before {
   line-height: 50px;
   border-radius: 50%;
   transition: transform 0.3s linear, color 0.3s linear;
-  color: #F6F6F6;
+  color: var( --text-color);
 }
 
 .card:hover .fa-solid,
 .card:hover .fa-brands {
   transform: scale(1.2);
-  color: #FFD700;
+  color: var(--link-color);
 }
 
 .graph {
@@ -438,8 +508,8 @@ nav a:hover::before {
 }
 
 .detail a {
-  background: #433D8B;
-  padding: 10px 18px;
+  background: var(--button-background);
+  padding: 12px 22px;
   text-decoration: none;
   font-weight: bold;
   color: white;
@@ -450,13 +520,18 @@ nav a:hover::before {
 .detail p{
   width: 50%;
   font-size: 1.25rem;
-  color: #F6F6F6;
+  color: var( --text-color);
   padding-bottom: 25px;
   margin-bottom: 0.5em;
 }
 
+.detail .me{
+  color: #aaaaaa;
+}
+
 .detail a:hover {
-  background-color: #5a52a5;
+  background-color: #a9a9a9;
+  color: #17153B;
 }
 
 .images {
@@ -471,32 +546,33 @@ nav a:hover::before {
   width: 100%;
   height: auto; /* Maintains aspect ratio */
   border-radius: 50%; /* Circular images */
-  background-color: #17153B;
-  box-shadow: 0 0 0 4px #433D8B, 0 0 0 4px #F6F6F6; /* Styled shadow for depth */
+  background-color: var(--background-color);
+  box-shadow: 0 0 0 4px var(--header-background), 0 0 0 4px var( --text-color); /* Styled shadow for depth */
 }
 
 .table{
-  background-color: #5a52a5;
+  background-color: var(--header-background);
 }
 .education-table {
   width: 100%;
   max-width: 100%;
   margin-top: 1em;
   border-collapse: collapse;
-  color: #F6F6F6; /* Text color */
+  color: var( --text-color); /* Text color */
 }
 
 .education-table td {
+  color: var( --text-color);
   padding: 10px 15px;
-  border-bottom: 1px solid #433D8B; /* Adds a border under each row */
+  border-bottom: 1px solid var(--header-background); /* Adds a border under each row */
 }
 
 .education-table tr:nth-child(even) {
-  background-color: #292762; /* Alternate row background */
+  background-color: var(--secondary-color); /* Alternate row background */
 }
 
 .education-table tr:hover {
-  background-color: #433D8B; /* Hover effect */
+  background-color: var(--secondary-color); /* Hover effect */
 }
 
 @media (max-width: 1280px) {
@@ -572,7 +648,7 @@ nav a:hover::before {
   padding-bottom: 30px;
   text-align: left;
   box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
-  background-color: #292762;
+  background-color: var(--secondary-color);
 }
 
 .skills p{
@@ -593,8 +669,8 @@ nav a:hover::before {
 }
 
 .skill-badge {
-  background-color: #17153B;
-  color: #F6F6F6;
+  background-color: var(--background-color);
+  color: var( --text-color);
   border-radius: 12px;
   padding: 10px 15px;
   display: flex;
@@ -611,12 +687,12 @@ nav a:hover::before {
 }
 
 .skill-badge:hover {
-  background-color: #433D8B;
+  background-color: var(--header-background);
   transform: translateY(-5px);
 }
 
 .skill-badge:hover i {
-  color: #FFD700;
+  color: var(--link-color);
 }
 
 .detail3{
@@ -636,7 +712,7 @@ nav a:hover::before {
   padding: 20px;
   border-radius: 4px;
   margin-bottom: 20px;
-  background-color: #292762;
+  background-color: var(--secondary-color);
 }
 
 .box p{
@@ -652,17 +728,13 @@ nav a:hover::before {
   font-weight: bold;
 }
 
-.view{
+.view a{
   display: inline-block;
   padding: 8px 16px;
-  background-color: #433D8B;
+  background-color: var(--button-background);
   border-radius: 4px;
   margin-top: 15px;
-  color: #F6F6F6;
   transition: background-color 0.3s ease;
-}
-
-.view a{
   color: #F6F6F6;
   font-size: 16px;
   text-decoration: none;
@@ -670,8 +742,9 @@ nav a:hover::before {
   
 }
 
-.view:hover {
-  background-color: #5a52a5;
+.view a:hover {
+  background-color: var(--button);
+  color: var(--text-color);
 }
 
 /* project */
@@ -688,7 +761,7 @@ nav a:hover::before {
   width: 100%;
   max-width: 1280px;
   height: auto;
-  background-color: #17153B;
+  background-color: var(--background-color);
   border-radius: 10px;
   overflow: hidden;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -743,7 +816,7 @@ nav a:hover::before {
 }
 
 .carousel-control:hover {
-  color: #F6F6F6;
+  color: var( --text-color);
   background-color: rgba(0, 0, 0, 0.7);
 }
 
@@ -765,8 +838,8 @@ nav a:hover::before {
 
 .project-info {
   padding: 20px;
-  background-color: #292762;
-  color: #F6F6F6;
+  background-color: var(--secondary-color);
+  color: var( --text-color);
 }
 
 .project-info h3{
@@ -778,17 +851,20 @@ nav a:hover::before {
 .btn {
   display: inline-block;
   padding: 8px 16px;
-  background-color: #433D8B;
+  margin-right: 10px;
+  background-color: var(--button-background);
   text-decoration: none;
   border-radius: 4px;
   margin-top: 15px;
   color: #F6F6F6;
+  font-weight: bold;
   transition: background-color 0.3s ease;
   border: none;
 }
 
 .btn:hover {
-  background-color: #17153B;
+  background-color: var(--button);
+  color: var(--text-color);
 }
 
 .btn.see-images {
@@ -862,7 +938,7 @@ nav a:hover::before {
 
 .contact-left-title h2{
   font-weight: 600px;
-  color: #F6F6F6;
+  color: var( --text-color);
   font-size: 40px;
   margin-bottom: 5px;
 }
@@ -883,7 +959,8 @@ nav a:hover::before {
   outline: none;
   padding-left: 25px;
   font-weight: 500;
-  color: #292762;
+  color: #17153B;
+  background-color: var(--box);
   border-radius: 30px;
 }
 
@@ -912,7 +989,10 @@ nav a:hover::before {
   border-radius: 50px;
   background: linear-gradient(270deg, #433D8B, #292762);
   cursor: pointer;
+  transition: background-color 0.3s ease;
 }
+
+
 
 .contact-left button img{
   height: 20px;
@@ -947,5 +1027,5 @@ nav a:hover::before {
 
 .fa-brands:hover, .fa-solid:hover{
   transform: scale(1.2);
-  color: #FFD700;
+  color: var(--link-color);
 }

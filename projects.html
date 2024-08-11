@@ -20,7 +20,11 @@
                     <li><a href="./about.html">About Me</a></li>
                     <li><a href="#projects.html">Projects</a></li>
                     <li><a href="./contactme.html">Contact Me</a></li>
-                    <li><a href="#mode">Mode</a></li>
+                    <li>
+                        <div id="theme-icon" class="theme-icon">
+                            <i class="fa-solid fa-moon"></i>
+                        </div>
+                    </li>
                     <!-- <li><a href="#mode"><i class="fa-solid fa-circle-half-stroke"></i></a></li> -->
                 </ul>
             </nav>
@@ -117,6 +121,44 @@
                 button.textContent = isExpanded ? "Hide Images" : "Project Images";
             });
         });
+    </script>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+        const themeIcon = document.getElementById('theme-icon');
+        const body = document.body;
+
+        const currentTheme = localStorage.getItem('theme') || 'light';
+        if (currentTheme === 'dark') {
+            body.classList.add('dark-mode');
+            themeIcon.innerHTML = '<i class="fa-solid fa-sun"></i>';
+        } else {
+            themeIcon.innerHTML = '<i class="fa-solid fa-moon"></i>';
+        }
+
+        themeIcon.addEventListener('click', function() {
+            body.classList.add('switching');
+            setTimeout(() => {
+                if (body.classList.contains('dark-mode')) {
+                    body.classList.remove('dark-mode');
+                    themeIcon.innerHTML = '<i class="fa-solid fa-moon"></i>';
+                    localStorage.setItem('theme', 'light');
+                } else {
+                    body.classList.add('dark-mode');
+                    themeIcon.innerHTML = '<i class="fa-solid fa-sun"></i>';
+                    localStorage.setItem('theme', 'dark');
+                }
+                body.classList.remove('switching'); 
+            }, 500);
+        });
+
+        const mobileMenu = document.getElementById('mobile-menu');
+        const navList = document.querySelector('.nav-list');
+
+        mobileMenu.addEventListener('click', function() {
+            navList.classList.toggle('show');
+        });
+    });
     </script>
 </body>
 </html>
