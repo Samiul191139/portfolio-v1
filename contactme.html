@@ -70,6 +70,7 @@
         const themeIcon = document.getElementById('theme-icon');
         const body = document.body;
 
+        // Check the current theme from localStorage
         const currentTheme = localStorage.getItem('theme') || 'light';
         if (currentTheme === 'dark') {
             body.classList.add('dark-mode');
@@ -79,28 +80,25 @@
         }
 
         themeIcon.addEventListener('click', function() {
-            body.classList.add('switching');
-            setTimeout(() => {
-                if (body.classList.contains('dark-mode')) {
-                    body.classList.remove('dark-mode');
-                    themeIcon.innerHTML = '<i class="fa-solid fa-moon"></i>';
-                    localStorage.setItem('theme', 'light');
-                } else {
-                    body.classList.add('dark-mode');
-                    themeIcon.innerHTML = '<i class="fa-solid fa-sun"></i>';
-                    localStorage.setItem('theme', 'dark');
-                }
-                body.classList.remove('switching'); 
-            }, 500);
+            if (body.classList.contains('dark-mode')) {
+                body.classList.remove('dark-mode');
+                themeIcon.innerHTML = '<i class="fa-solid fa-moon"></i>';
+                localStorage.setItem('theme', 'light');
+            } else {
+                body.classList.add('dark-mode');
+                themeIcon.innerHTML = '<i class="fa-solid fa-sun"></i>';
+                localStorage.setItem('theme', 'dark');
+            }
         });
 
         const mobileMenu = document.getElementById('mobile-menu');
         const navList = document.querySelector('.nav-list');
 
         mobileMenu.addEventListener('click', function() {
-            navList.classList.toggle('show');
+            navList.classList.toggle('active');
         });
     });
+
     </script>
 </body>
 </html>

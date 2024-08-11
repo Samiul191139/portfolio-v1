@@ -443,14 +443,29 @@ nav a:hover::before {
   .body {
     margin-top: 80px;
   }
+
   .container {
     flex-direction: row;
     padding: 10px;
   }
+
   .menu-toggle {
     display: block;
     margin-left: auto;
   }
+
+  nav ul {
+    flex-direction: column;
+    background-color: #333;
+    position: absolute;
+    top: 50px;
+    right: -100%;
+    width: 100%;
+    height: calc(100vh - 50px);
+    transition: right 0.3s ease;
+    z-index: 999;
+  }
+
   .nav-list {
     position: fixed;
     top: 50px;
@@ -624,13 +639,13 @@ nav a:hover::before {
   }
 
   .nav-list {
-    display: none; /* Hide by default on mobile */
+    display: none;
   }
 
   .nav-list.active {
-    display: flex; /* Show when activated */
+    display: flex;
     flex-direction: column;
-    width: 100%; /* Full width */
+    width: 100%;
   }
 
   .images img{

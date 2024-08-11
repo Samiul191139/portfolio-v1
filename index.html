@@ -172,18 +172,7 @@
         const navList = document.querySelector('.nav-list');
 
         mobileMenu.addEventListener('click', function() {
-            navList.classList.toggle('show');
-        });
-
-        const currentPath = window.location.pathname;
-        const navLinks = document.querySelectorAll('.nav-list li a');
-
-        navLinks.forEach(link => {
-            if (link.getAttribute('href') === currentPath) {
-                link.classList.add('active');
-            } else {
-                link.classList.remove('active');
-            }
+            navList.classList.toggle('active');
         });
     });
     </script>
