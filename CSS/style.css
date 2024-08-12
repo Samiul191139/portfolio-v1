@@ -305,6 +305,7 @@ nav a:hover::before {
 /* General Styling for Research Section */
 .research {
   /* padding: 40px 20px; */
+  padding-bottom: 20px;
   background-color: var(--background-color);
   text-align: center;
 }
@@ -340,7 +341,7 @@ nav a:hover::before {
 .research-card .status {
   display: inline-block;
   font-size: 14px;
-  color: #fff;
+  color: var(--text-reverse);
   background-color: var(--accent-color);
   padding: 2px 8px;
   border-radius: 4px;
@@ -945,8 +946,8 @@ nav a:hover::before {
 }
 
 .view a:hover {
-  background-color: var(--button);
-  color: var(--text-color);
+  background-color: #a9a9a9;
+  color: #17153B;
 }
 
 /* project */
