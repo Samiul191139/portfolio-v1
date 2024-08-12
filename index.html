@@ -95,6 +95,9 @@
     <div class="np" id="Projects">
         <p>Notable Projects</p>
     </div>
+
+    <button id="scrollTopBtn" class="scroll-to-top"><i class="fas fa-arrow-up"></i></button>
+
     <div class="more">
         <div class="cards">
             <img id="sl1" src="./Assets/login_page.PNG" alt="" class="ss">
@@ -137,42 +140,64 @@
             <img src="https://ghchart.rshah.org/433D8B/Samiul191139" alt="GitHub Contribution Calendar" class="graph">
         </div>
     </div>
+    
     <script src="script.js"></script>
 
-    <script>
-        document.addEventListener("DOMContentLoaded", function() {
-        const themeIcon = document.getElementById('theme-icon');
-        const body = document.body;
-
-        // Check the current theme from localStorage
-        const currentTheme = localStorage.getItem('theme') || 'light';
-        if (currentTheme === 'dark') {
-            body.classList.add('dark-mode');
-            themeIcon.innerHTML = '<i class="fa-solid fa-sun"></i>';
-        } else {
-            themeIcon.innerHTML = '<i class="fa-solid fa-moon"></i>';
-        }
-
-        themeIcon.addEventListener('click', function() {
-            if (body.classList.contains('dark-mode')) {
-                body.classList.remove('dark-mode');
-                themeIcon.innerHTML = '<i class="fa-solid fa-moon"></i>';
-                localStorage.setItem('theme', 'light');
-            } else {
-                body.classList.add('dark-mode');
-                themeIcon.innerHTML = '<i class="fa-solid fa-sun"></i>';
-                localStorage.setItem('theme', 'dark');
-            }
-        });
-
-        const mobileMenu = document.getElementById('mobile-menu');
-        const navList = document.querySelector('.nav-list');
-
-        mobileMenu.addEventListener('click', function() {
-            navList.classList.toggle('active');
-        });
-    });
-
-    </script>
+    <div class="research">
+        <div class="np">
+            <p>Ongoing Research</p>
+        </div>
+        <div class="research-cards">
+            <div class="research-card">
+                <h3>Lumbar Spine Degenerative Classification</h3>
+                <span class="status">Ongoing</span>
+                <p>Research on developing advanced algorithms to classify degenerative changes in the lumbar spine using medical imaging data.</p>
+            </div>
+            <div class="research-card">
+                <h3>Violence Detection from Social Media using NLP</h3>
+                <span class="status">Ongoing</span>
+                <p>Utilizing Natural Language Processing techniques to detect and analyze violent content in social media posts.</p>
+            </div>
+        </div>
+    </div>
+    
+    <footer>
+        <div class="footer-container">
+            <!-- <div class="footer-section about">
+                <h3>About Me</h3>
+                <p>I'm Samiul Karim Mazumder, an aspiring Full Stack Programmer and Game Developer, currently pursuing a Bachelor's degree in Computer Science & Engineering. Passionate about creating impactful digital experiences.</p>
+            </div> -->
+            <div class="footer-section links">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="./index.html">Home</a></li>
+                    <li><a href="./about.html">About Me</a></li>
+                    <li><a href="./projects.html">Projects</a></li>
+                    <li><a href="./contactme.html">Contact Me</a></li>
+                </ul>
+            </div>
+            <div class="footer-section contact">
+                <h3>Contact</h3>
+                <ul>
+                    <li><a href="mailto:samikarim191139@gmail.com"><i class="fa-solid fa-envelope"></i> samikarim191139@gmail.com</a></li>
+                    <li><a href="https://github.com/Samiul191139" target="_blank"><i class="fa-brands fa-github"></i> GitHub</a></li>
+                    <li><a href="https://www.linkedin.com/in/samiulkarim191139/" target="_blank"><i class="fa-brands fa-linkedin"></i> LinkedIn</a></li>
+                    <li><a href="https://discord.com/channels/@me" target="_blank"><i class="fa-brands fa-discord"></i> Discord</a></li>
+                </ul>
+            </div>
+            <div class="footer-section social">
+                <h3>Follow Me</h3>
+                <div class="social-icons">
+                    <a href="https://twitter.com" target="_blank"><i class="fab fa-twitter"></i></a>
+                    <a href="https://facebook.com" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                    <a href="https://instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 Samiul Karim Mazumder | All Rights Reserved</p>
+        </div>
+    </footer>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js" integrity="sha512-puF6mN5nNgx9z7xQ7Zs/1zH2InHfU9YzjZzV/LQK6vTo+fK0jZzE9D9Zd1x9F3L9w+3FJcHFOjCj5QtV7RAtg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 </body>
 </html>

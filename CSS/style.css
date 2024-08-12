@@ -302,6 +302,84 @@ nav a:hover::before {
   background-color: var(--secondary-color);
 }
 
+/* General Styling for Research Section */
+.research {
+  /* padding: 40px 20px; */
+  background-color: var(--background-color);
+  text-align: center;
+}
+
+.research .np p {
+  font-size: 28px;
+  margin-bottom: 20px;
+  color: var(--text-color);
+}
+
+.research-cards {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.research-card {
+  background-color: var(--secondary-color);
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  max-width: 400px;
+  margin: 10px;
+  text-align: left;
+}
+
+.research-card h3 {
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+
+.research-card .status {
+  display: inline-block;
+  font-size: 14px;
+  color: #fff;
+  background-color: var(--accent-color);
+  padding: 2px 8px;
+  border-radius: 4px;
+  margin-bottom: 15px;
+}
+
+.research-card p {
+  font-size: 16px;
+  color: var(--text-color);
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .research-cards {
+      flex-direction: column;
+      align-items: center;
+  }
+  
+  .research-card {
+      width: 100%;
+      max-width: none;
+      text-align: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .research .np p {
+      font-size: 24px;
+  }
+
+  .research-card h3 {
+      font-size: 18px;
+  }
+
+  .research-card p {
+      font-size: 14px;
+  }
+}
+
 .cardcont {
   min-height: 380px;
   max-height: 420px;
@@ -369,6 +447,7 @@ nav a:hover::before {
 }
 
 .graph {
+  /* background-color: #ddd; */
   width: 100%;
   max-width: 1080px;
   height: auto;
@@ -819,8 +898,8 @@ nav a:hover::before {
 
 .detail4{
   padding: 0% 10%;
-  padding-top: 30px;
-  padding-bottom: 30px;
+  padding-top: 20px;
+  /* padding-bottom: 30px; */
   text-align: left;
   box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
   background-color: var(--text-reverse);
@@ -1154,4 +1233,96 @@ nav a:hover::before {
 .fa-brands:hover, .fa-solid:hover{
   transform: scale(1.2);
   color: var(--link-color);
+}
+
+footer {
+  background-color: var(--secondary-color);
+  color: var(--text-color);
+  /* padding-top: 40px; */
+}
+
+.footer-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.footer-section {
+  /* flex: 1; */
+  margin: 10px;
+  min-width: 200px;
+}
+
+.footer-section h3 {
+  font-size: 18px;
+  margin-bottom: 15px;
+  border-bottom: 2px solid var(--accent-color);
+  padding-bottom: 5px;
+  display: inline-block;
+}
+
+.footer-section p {
+  line-height: 1.6;
+}
+
+.footer-section ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.footer-section ul li {
+  margin-bottom: 10px;
+}
+
+.footer-section ul li a {
+  color: var(--text-color);
+  font-weight: 20px;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.footer-section ul li a:hover {
+  color: var(--accent-color);
+}
+
+.footer-section .social-icons {
+  display: flex;
+}
+
+.footer-section .social-icons a {
+  color: var(--text-color);
+  margin-right: 15px;
+  font-size: 18px;
+  transition: color 0.3s ease;
+}
+
+.footer-section .social-icons a:hover {
+  color: var(--accent-color);
+}
+
+.footer-bottom {
+  text-align: center;
+  padding: 20px 0;
+  border-top: 1px solid #444;
+  /* margin-top: 20px; */
+}
+
+.footer-bottom p {
+  margin: 0;
+  font-size: 14px;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  .footer-container {
+      flex-direction: column;
+      align-items: center;
+  }
+
+  .footer-section {
+      margin: 20px 0;
+  }
 }
