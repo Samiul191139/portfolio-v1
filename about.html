@@ -17,7 +17,7 @@
                 </div>
                 <ul class="nav-list">
                     <li><a href="index.html">Home</a></li>
-                    <li><a href="#about.html">About Me</a></li>
+                    <li><a href="#about.html" class="active">About Me</a></li>
                     <li><a href="./projects.html">Projects</a></li>
                     <li><a href="./contactme.html">Contact Me</a></li>
                     <li>
@@ -85,6 +85,46 @@
             </div>
         </div>
     </div>
+
+    <div class="detail4">
+        <div class="experience">
+            <h2>Experience</h2>
+            <div class="experience-list">
+                <div class="timeline">
+                    <div class="job">
+                        <div class="circle"></div>
+                        <div class="content">
+                            <h3>Full Stack Developer</h3>
+                            <p><strong>Company Name</strong> - January 2022 to Present</p>
+                            <ul>
+                                <li>Developed and maintained web applications using modern JavaScript frameworks.</li>
+                                <li>Collaborated with design and product teams to implement new features.</li>
+                                <li>Optimized applications for maximum speed and scalability.</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="job">
+                        <div class="circle"></div>
+                        <div class="content">
+                            <h3>Web Designer</h3>
+                            <p><strong>Another Company</strong> - June 2020 to December 2021</p>
+                            <ul>
+                                <li>Designed and implemented responsive websites for small to medium-sized businesses.</li>
+                                <li>Ensured design consistency across platforms and browsers.</li>
+                                <li>Worked closely with clients to understand their needs and deliver high-quality products.</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <!-- Add more jobs as needed -->
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    
+    <!-- Scroll to Top Button -->
+    <button id="scrollTopBtn" class="scroll-to-top"><i class="fas fa-arrow-up"></i></button>
+    
 
 
     <div class="detail3">
@@ -168,20 +208,19 @@
     </div>
     <script>
         document.addEventListener("DOMContentLoaded", function() {
-        const themeIcon = document.getElementById('theme-icon');
-        const body = document.body;
-
-        const currentTheme = localStorage.getItem('theme') || 'light';
-        if (currentTheme === 'dark') {
-            body.classList.add('dark-mode');
-            themeIcon.innerHTML = '<i class="fa-solid fa-sun"></i>';
-        } else {
-            themeIcon.innerHTML = '<i class="fa-solid fa-moon"></i>';
-        }
-
-        themeIcon.addEventListener('click', function() {
-            body.classList.add('switching');
-            setTimeout(() => {
+            const themeIcon = document.getElementById('theme-icon');
+            const body = document.body;
+    
+            // Check the current theme from localStorage
+            const currentTheme = localStorage.getItem('theme') || 'light';
+            if (currentTheme === 'dark') {
+                body.classList.add('dark-mode');
+                themeIcon.innerHTML = '<i class="fa-solid fa-sun"></i>';
+            } else {
+                themeIcon.innerHTML = '<i class="fa-solid fa-moon"></i>';
+            }
+    
+            themeIcon.addEventListener('click', function() {
                 if (body.classList.contains('dark-mode')) {
                     body.classList.remove('dark-mode');
                     themeIcon.innerHTML = '<i class="fa-solid fa-moon"></i>';
@@ -191,17 +230,34 @@
                     themeIcon.innerHTML = '<i class="fa-solid fa-sun"></i>';
                     localStorage.setItem('theme', 'dark');
                 }
-                body.classList.remove('switching'); 
-            }, 500);
+            });
+    
+            const mobileMenu = document.getElementById('mobile-menu');
+            const navList = document.querySelector('.nav-list');
+    
+            mobileMenu.addEventListener('click', function() {
+                navList.classList.toggle('active');
+            });
+    
+            // Scroll to Top Button
+            const scrollTopBtn = document.getElementById('scrollTopBtn');
+    
+            window.addEventListener('scroll', function() {
+                if (window.scrollY > 200) {
+                    scrollTopBtn.classList.add('show');
+                } else {
+                    scrollTopBtn.classList.remove('show');
+                }
+            });
+    
+            scrollTopBtn.addEventListener('click', function() {
+                window.scrollTo({
+                    top: 0,
+                    behavior: 'smooth'
+                });
+            });
         });
-
-        const mobileMenu = document.getElementById('mobile-menu');
-        const navList = document.querySelector('.nav-list');
-
-        mobileMenu.addEventListener('click', function() {
-            navList.classList.toggle('active');
-        });
-    });
     </script>
+    
 </body>
 </html>

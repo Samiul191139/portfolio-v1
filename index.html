@@ -16,7 +16,7 @@
                     <i class="fas fa-bars"></i>
                 </div>
                 <ul class="nav-list">
-                    <li><a href="#">Home</a></li>
+                    <li><a href="#" class="active">Home</a></li>
                     <li><a href="./about.html">About Me</a></li>
                     <li><a href="./projects.html">Projects</a></li>
                     <li><a href="./contactme.html">Contact Me</a></li>
@@ -44,7 +44,7 @@
 
                     I'm keen on collaborating with enthusiastic developers and seizing opportunities to expand my fundamental knowledge while gaining practical experience. I'm all about the process of continuous learning and improvement, and I'm excited to engage in projects that challenge and expand my coding abilities.
                     
-                    Let's connect, share ideas, and grow together in the vast world of software development!"
+                    Let's connect, share ideas, and grow together in the vast world of software development!
                     
                     I am happy to collaborate with enthusiastic developers.</p>
             </div>
@@ -144,6 +144,7 @@
         const themeIcon = document.getElementById('theme-icon');
         const body = document.body;
 
+        // Check the current theme from localStorage
         const currentTheme = localStorage.getItem('theme') || 'light';
         if (currentTheme === 'dark') {
             body.classList.add('dark-mode');
@@ -153,19 +154,15 @@
         }
 
         themeIcon.addEventListener('click', function() {
-            body.classList.add('switching');
-            setTimeout(() => {
-                if (body.classList.contains('dark-mode')) {
-                    body.classList.remove('dark-mode');
-                    themeIcon.innerHTML = '<i class="fa-solid fa-moon"></i>';
-                    localStorage.setItem('theme', 'light');
-                } else {
-                    body.classList.add('dark-mode');
-                    themeIcon.innerHTML = '<i class="fa-solid fa-sun"></i>';
-                    localStorage.setItem('theme', 'dark');
-                }
-                body.classList.remove('switching'); 
-            }, 500);
+            if (body.classList.contains('dark-mode')) {
+                body.classList.remove('dark-mode');
+                themeIcon.innerHTML = '<i class="fa-solid fa-moon"></i>';
+                localStorage.setItem('theme', 'light');
+            } else {
+                body.classList.add('dark-mode');
+                themeIcon.innerHTML = '<i class="fa-solid fa-sun"></i>';
+                localStorage.setItem('theme', 'dark');
+            }
         });
 
         const mobileMenu = document.getElementById('mobile-menu');
@@ -175,6 +172,7 @@
             navList.classList.toggle('active');
         });
     });
+
     </script>
 </body>
 </html>
