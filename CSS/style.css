@@ -375,6 +375,12 @@ nav a:hover::before {
 }
 
 @media (max-width: 480px) {
+  .research-card{
+    min-width: 320px;
+    max-width: 280px;
+    padding: 20px;
+    height: 100%;
+  }
   .research .np p {
       font-size: 24px;
   }
