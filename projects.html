@@ -3,11 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="./js/theme-init.js"></script>
     <link rel="stylesheet" href="./CSS/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
     <title>Portfolio - Projects</title>
 </head>
 <body>
+    <div id="page-loader" class="page-loader" role="status" aria-live="polite" aria-label="Loading portfolio">
+        <div class="loader-game">
+            <i class="fas fa-gamepad" aria-hidden="true"></i>
+            <h2>Loading</h2>
+            <p>Please Wit A Minute, It's Worth It XD...</p>
+            <div class="loader-bar"><div class="loader-progress"></div></div>
+            <div class="loader-dots" aria-hidden="true"><span></span><span></span><span></span></div>
+        </div>
+    </div>
     <header>
         <div class="container">
             <h1 class="logo">SK</h1>
@@ -34,10 +44,10 @@
             <div class="project-card">
                 <div class="project-carousel">
                     <button class="carousel-control prev" onclick="changeImage(this, -1)">&#10094;</button>
-                    <img src="./Assets/awakened/Final Product.gif" alt="Awakened" class="active">
-                    <img src="./Assets/awakened/awakened_1.png" alt="Awakened">
-                    <img src="./Assets/awakened/awakened_2.png" alt="Awakened">
-                    <img src="./Assets/awakened/awakened_3.png" alt="Awakened">
+                    <img src="./Assets/awakened/awakened_2.png" alt="Awakened screenshot 1" class="active" loading="lazy" decoding="async">
+                    <img src="./Assets/awakened/awakened_3.png" alt="Awakened screenshot 2" loading="lazy" decoding="async">
+                    <img src="./Assets/awakened/awakened_1.png" alt="Awakened screenshot 3" loading="lazy" decoding="async">
+                    <img data-src="./Assets/awakened/Final Product.gif" alt="Awakened gameplay preview" loading="lazy" decoding="async">
                     <button class="carousel-control next" onclick="changeImage(this, 1)">&#10095;</button>
                 </div>
                 <div class="project-info">
@@ -69,7 +79,7 @@
             <div class="project-card">
                 <div class="project-carousel">
                     <button class="carousel-control prev" onclick="changeImage(this, -1)">&#10094;</button>
-                    <img src="./Assets/cp_lord/CPlord.gif" alt="CP_Lord Discord bot" class="active">
+                    <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='320' height='180' viewBox='0 0 320 180'%3E%3Crect fill='%23433D8B' width='320' height='180'/%3E%3Ctext x='160' y='95' text-anchor='middle' fill='%23F6F6F6' font-family='sans-serif' font-size='18'%3ECP_Lord Bot%3C/text%3E%3C/svg%3E" data-src="./Assets/cp_lord/CPlord.gif" alt="CP_Lord Discord bot demo" class="active" loading="lazy" decoding="async">
                     <button class="carousel-control next" onclick="changeImage(this, 1)">&#10095;</button>
                 </div>
                 <div class="project-info">
@@ -133,6 +143,7 @@
         </div>
     </main>
 
+    <script src="./js/loader.js"></script>
     <script src="./script.js"></script>
 
     <footer>

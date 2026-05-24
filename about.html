@@ -3,11 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="./js/theme-init.js"></script>
     <link rel="stylesheet" href="./CSS/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
     <title>Portfolio - About Me</title>
 </head>
 <body>
+    <div id="page-loader" class="page-loader" role="status" aria-live="polite" aria-label="Loading portfolio">
+        <div class="loader-game">
+            <i class="fas fa-gamepad" aria-hidden="true"></i>
+            <h2>Loading</h2>
+            <p>You Are About to See It All...</p>
+            <div class="loader-bar"><div class="loader-progress"></div></div>
+            <div class="loader-dots" aria-hidden="true"><span></span><span></span><span></span></div>
+        </div>
+    </div>
     <header>
         <div class="container">
             <h1 class="logo">SK</h1>
@@ -148,18 +158,30 @@
         </div>
         <div class="research-cards">
             <div class="research-card">
-                <h3>Detection-Guided Lumbar Spine Degeneration Classification Using Multi-Slice Encoded MRI</h3>
-                <span class="status published">Published</span>
-                <p> <b>International Conference on Machine Learning and Cybernetics (ICMLC) - 2025.</b></p>
-                <p> Proposed a Detection-Guided Classification Framework that integrates automated region detection with deep learning-based severity classification.</p>
-                <a href="https://ieeexplore.ieee.org/document/11280017" target="_blank" class="btn pub-link">View Paper</a>
+                <div class="research-card-inner">
+                    <h3>Detection-Guided Lumbar Spine Degeneration Classification Using Multi-Slice Encoded MRI</h3>
+                    <span class="status published">Published</span>
+                    <div class="research-card-body">
+                        <p><b>International Conference on Machine Learning and Cybernetics (ICMLC) - 2025.</b></p>
+                        <p>Proposed a Detection-Guided Classification Framework that integrates automated region detection with deep learning-based severity classification.</p>
+                    </div>
+                    <div class="research-card-actions">
+                        <a href="https://ieeexplore.ieee.org/document/11280017" target="_blank" class="btn pub-link">View Paper</a>
+                    </div>
+                </div>
             </div>
             <div class="research-card">
-                <h3>Advancing Gastrointestinal Tract Segmentation: Dense-UPerNet and a Benchmark of 18 Encoder-Decoder Models</h3>
-                <span class="status published">Published</span>
-                <p> <b> International Conference on Biomedical Engineering, Computer and Information Technology for Health (BECITHCON) - 2025.</b></p>
-                <p>Published research benchmarking encoder-decoder architectures for gastrointestinal tract segmentation in medical imaging.</p>
-                <a href="https://ieeexplore.ieee.org/document/11504046" target="_blank" class="btn pub-link">View Paper</a>
+                <div class="research-card-inner">
+                    <h3>Advancing Gastrointestinal Tract Segmentation: Dense-UPerNet and a Benchmark of 18 Encoder-Decoder Models</h3>
+                    <span class="status published">Published</span>
+                    <div class="research-card-body">
+                        <p><b>International Conference on Biomedical Engineering, Computer and Information Technology for Health (BECITHCON) - 2025.</b></p>
+                        <p>Published research benchmarking encoder-decoder architectures for gastrointestinal tract segmentation in medical imaging.</p>
+                    </div>
+                    <div class="research-card-actions">
+                        <a href="https://ieeexplore.ieee.org/document/11504046" target="_blank" class="btn pub-link">View Paper</a>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
@@ -259,6 +281,7 @@
             </div>
         </div>
     </div>
+    <script src="./js/loader.js"></script>
     <script src="./script.js"></script>
 <footer>
     <div class="footer-bottom">

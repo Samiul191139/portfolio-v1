@@ -3,12 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="./js/theme-init.js"></script>
     <link rel="stylesheet" href="./CSS/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
     <title>Portfolio - Contact Me</title>
 </head>
 <body>
-    <!-- <img src="./Assets/peakpx.jpg" class="background"> -->
+    <div id="page-loader" class="page-loader" role="status" aria-live="polite" aria-label="Loading portfolio">
+        <div class="loader-game">
+            <i class="fas fa-gamepad" aria-hidden="true"></i>
+            <h2>Loading</h2>
+            <p>Contact Me Please...</p>
+            <div class="loader-bar"><div class="loader-progress"></div></div>
+            <div class="loader-dots" aria-hidden="true"><span></span><span></span><span></span></div>
+        </div>
+    </div>
     <header>
         <div class="container">
             <h1 class="logo">SK</h1>
@@ -65,6 +74,7 @@
         </div>
     </main>
 
+    <script src="./js/loader.js"></script>
     <script src="./script.js"></script>
     <footer>
         <div class="footer-bottom">

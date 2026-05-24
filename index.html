@@ -3,11 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="./js/theme-init.js"></script>
     <link rel="stylesheet" href="./CSS/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
     <title>Portfolio</title>
 </head>
 <body>
+    <div id="page-loader" class="page-loader" role="status" aria-live="polite" aria-label="Loading portfolio">
+        <div class="loader-game">
+            <i class="fas fa-gamepad" aria-hidden="true"></i>
+            <h2>Loading</h2>
+            <p>Country Road, Take Me Home...</p>
+            <div class="loader-bar"><div class="loader-progress"></div></div>
+            <div class="loader-dots" aria-hidden="true"><span></span><span></span><span></span></div>
+        </div>
+    </div>
     <header>
         <div class="container">
             <h1 class="logo">SK</h1>
@@ -73,6 +83,27 @@
         </div>
     </div>
 
+    <section class="mini-game-section" aria-label="Mini game">
+        <button type="button" id="game-toggle" class="btn game-toggle-btn" aria-expanded="false" aria-controls="game-panel">
+            <i class="fas fa-gamepad"></i> Play !!!
+        </button>
+        <div id="game-panel" class="game-panel" hidden>
+            <p id="ttt-status" class="ttt-status">Press the button above to start</p>
+            <div id="ttt-board" role="grid" aria-label="Tic tac toe board">
+                <button type="button" class="ttt-cell" data-index="0" aria-label="Cell 1"></button>
+                <button type="button" class="ttt-cell" data-index="1" aria-label="Cell 2"></button>
+                <button type="button" class="ttt-cell" data-index="2" aria-label="Cell 3"></button>
+                <button type="button" class="ttt-cell" data-index="3" aria-label="Cell 4"></button>
+                <button type="button" class="ttt-cell" data-index="4" aria-label="Cell 5"></button>
+                <button type="button" class="ttt-cell" data-index="5" aria-label="Cell 6"></button>
+                <button type="button" class="ttt-cell" data-index="6" aria-label="Cell 7"></button>
+                <button type="button" class="ttt-cell" data-index="7" aria-label="Cell 8"></button>
+                <button type="button" class="ttt-cell" data-index="8" aria-label="Cell 9"></button>
+            </div>
+            <button type="button" id="ttt-reset" class="btn">New Game</button>
+        </div>
+    </section>
+
     <div class="stats-container">
         <div class="stats-card">
             <h1>3+</h1>
@@ -84,7 +115,7 @@
         </div>
         <div class="stats-card">
             <h1>6</h1>
-            <p>Programming Languages Learned</p>
+            <p>Programming Languages</p>
         </div>
         <div class="stats-card">
             <h1>250+</h1>
@@ -100,7 +131,7 @@
 
     <div class="more">
         <div class="cards">
-            <img src="./Assets/awakened/Final Product.gif" alt="Awakened game project" class="ss">
+            <img src="./Assets/awakened/awakened_2.png" alt="Awakened game project" class="ss" loading="lazy" decoding="async" width="320" height="200">
             <div class="cardcont">
                 <h3>Awakened</h3>
                 <p>2D platformer game built with Unity featuring dual-path gameplay, modular combat, multi-phase boss encounters, and real-time HUD systems. Runner-up at Learnathon 3.0.</p>
@@ -120,7 +151,7 @@
             </div>
         </div>
         <div class="cards">
-            <img src="./Assets/cp_lord/CPlord.gif" alt="CP_Lord Discord bot" class="ss">
+            <div class="card-media-placeholder" aria-hidden="true"><i class="fa-brands fa-discord"></i></div>
             <div class="cardcont">
                 <h3>CP_Lord Discord Bot</h3>
                 <p>A Discord bot designed to support competitive programming communities with automated features, utilities, and interactive commands for practice and engagement.</p>
@@ -140,26 +171,36 @@
         </div>
     </div>
 
-    <script src="script.js"></script>
-
     <div class="research">
         <div class="np">
             <p>Publications</p>
         </div>
         <div class="research-cards">
             <div class="research-card">
-                <h3>Detection-Guided Lumbar Spine Degeneration Classification Using Multi-Slice Encoded MRI</h3>
-                <span class="status published">Published</span>
-                <p> <b>International Conference on Machine Learning and Cybernetics (ICMLC) - 2025.</b></p>
-                <p> Proposed a Detection-Guided Classification Framework that integrates automated region detection with deep learning-based severity classification.</p>
-                <a href="https://ieeexplore.ieee.org/document/11280017" target="_blank" class="btn pub-link">View Paper</a>
+                <div class="research-card-inner">
+                    <h3>Detection-Guided Lumbar Spine Degeneration Classification Using Multi-Slice Encoded MRI</h3>
+                    <span class="status published">Published</span>
+                    <div class="research-card-body">
+                        <p><b>International Conference on Machine Learning and Cybernetics (ICMLC) - 2025.</b></p>
+                        <p>Proposed a Detection-Guided Classification Framework that integrates automated region detection with deep learning-based severity classification.</p>
+                    </div>
+                    <div class="research-card-actions">
+                        <a href="https://ieeexplore.ieee.org/document/11280017" target="_blank" class="btn pub-link">View Paper</a>
+                    </div>
+                </div>
             </div>
             <div class="research-card">
-                <h3>Advancing Gastrointestinal Tract Segmentation: Dense-UPerNet and a Benchmark of 18 Encoder-Decoder Models</h3>
-                <span class="status published">Published</span>
-                <p> <b> International Conference on Biomedical Engineering, Computer and Information Technology for Health (BECITHCON) - 2025.</b></p>
-                <p>Published research benchmarking encoder-decoder architectures for gastrointestinal tract segmentation in medical imaging.</p>
-                <a href="https://ieeexplore.ieee.org/document/11504046" target="_blank" class="btn pub-link">View Paper</a>
+                <div class="research-card-inner">
+                    <h3>Advancing Gastrointestinal Tract Segmentation: Dense-UPerNet and a Benchmark of 18 Encoder-Decoder Models</h3>
+                    <span class="status published">Published</span>
+                    <div class="research-card-body">
+                        <p><b>International Conference on Biomedical Engineering, Computer and Information Technology for Health (BECITHCON) - 2025.</b></p>
+                        <p>Published research benchmarking encoder-decoder architectures for gastrointestinal tract segmentation in medical imaging.</p>
+                    </div>
+                    <div class="research-card-actions">
+                        <a href="https://ieeexplore.ieee.org/document/11504046" target="_blank" class="btn pub-link">View Paper</a>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
@@ -170,9 +211,13 @@
         </div>
         <div class="research-cards">
             <div class="research-card">
-                <h3>Medical Image Analysis - MIRA Wing, CCDS</h3>
-                <span class="status">Ongoing</span>
-                <p>Developing deep learning solutions for medical image analysis, including preprocessing pipelines with OpenCV and collaborative AI architecture design for clinical imaging research.</p>
+                <div class="research-card-inner">
+                    <h3>Medical Image Analysis - MIRA Wing, CCDS</h3>
+                    <span class="status">Ongoing</span>
+                    <div class="research-card-body">
+                        <p>Developing deep learning solutions for medical image analysis, including preprocessing pipelines with OpenCV and collaborative AI architecture design for clinical imaging research.</p>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
@@ -214,6 +259,8 @@
             <p>&copy; 2024 Samiul Karim Mazumder | All Rights Reserved</p>
         </div>
     </footer>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js" integrity="sha512-puF6mN5nNgx9z7xQ7Zs/1zH2InHfU9YzjZzV/LQK6vTo+fK0jZzE9D9Zd1x9F3L9w+3FJcHFOjCj5QtV7RAtg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="./js/loader.js"></script>
+    <script src="./script.js"></script>
+    <script src="./js/tictactoe.js"></script>
 </body>
 </html>
