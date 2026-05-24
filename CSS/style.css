@@ -34,6 +34,23 @@ body.dark-mode {
   --button-background: #433D8B;
 }
 
+body.red-mode {
+  --nav: rgba(0, 0, 0, 0.92);
+  --about: #0d0d0d, #1a1a1a, #2b0000;
+  --button: #1a1a1a;
+  --box: #262626;
+  --background-color: #0d0d0d;
+  --text-color: #ffffff;
+  --text-reverse: #0d0d0d;
+  --primary-color: #cc0000;
+  --secondary-color: #1a1a1a;
+  --accent-color: #ff3333;
+  --header-background: #141414;
+  --card-background: #1f1f1f;
+  --link-color: #ff4444;
+  --button-background: #b30000;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -59,6 +76,10 @@ body {
 
 body.dark-mode .theme-icon {
   color: #FFD700;
+}
+
+body.red-mode .theme-icon {
+  color: #ff4444;
 }
 
 @keyframes fade {
@@ -353,6 +374,16 @@ nav a:hover::before {
   padding: 2px 8px;
   border-radius: 4px;
   margin-bottom: 15px;
+}
+
+.research-card .status.published {
+  background-color: var(--button-background);
+  color: #F6F6F6;
+}
+
+.research-card .pub-link {
+  display: inline-block;
+  margin-top: 10px;
 }
 
 .research-card p {

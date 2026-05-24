@@ -39,26 +39,42 @@ function changeImage(button, change) {
     document.addEventListener("DOMContentLoaded", function() {
         const themeIcon = document.getElementById('theme-icon');
         const body = document.body;
+        const themes = ['light', 'dark', 'red'];
 
-        // Check the current theme from localStorage
-        const currentTheme = localStorage.getItem('theme') || 'light';
-        if (currentTheme === 'dark') {
-            body.classList.add('dark-mode');
-            themeIcon.innerHTML = '<i class="fa-solid fa-sun"></i>';
-        } else {
-            themeIcon.innerHTML = '<i class="fa-solid fa-moon"></i>';
+        function updateThemeIcon(theme) {
+            if (theme === 'dark') {
+                themeIcon.innerHTML = '<i class="fa-solid fa-sun"></i>';
+            } else if (theme === 'red') {
+                themeIcon.innerHTML = '<i class="fa-solid fa-palette"></i>';
+            } else {
+                themeIcon.innerHTML = '<i class="fa-solid fa-moon"></i>';
+            }
         }
 
-        themeIcon.addEventListener('click', function() {
-            if (body.classList.contains('dark-mode')) {
-                body.classList.remove('dark-mode');
-                themeIcon.innerHTML = '<i class="fa-solid fa-moon"></i>';
-                localStorage.setItem('theme', 'light');
-            } else {
+        function applyTheme(theme) {
+            body.classList.remove('dark-mode', 'red-mode');
+            if (theme === 'dark') {
                 body.classList.add('dark-mode');
-                themeIcon.innerHTML = '<i class="fa-solid fa-sun"></i>';
-                localStorage.setItem('theme', 'dark');
+            } else if (theme === 'red') {
+                body.classList.add('red-mode');
             }
+            updateThemeIcon(theme);
+            localStorage.setItem('theme', theme);
+        }
+
+        const savedTheme = localStorage.getItem('theme') || 'light';
+        const currentTheme = themes.includes(savedTheme) ? savedTheme : 'light';
+        applyTheme(currentTheme);
+
+        themeIcon.addEventListener('click', function() {
+            const currentIndex = themes.indexOf(
+                body.classList.contains('red-mode') ? 'red' :
+                body.classList.contains('dark-mode') ? 'dark' : 'light'
+            );
+            const nextTheme = themes[(currentIndex + 1) % themes.length];
+            body.classList.add('switching');
+            applyTheme(nextTheme);
+            setTimeout(() => body.classList.remove('switching'), 800);
         });
 
         const mobileMenu = document.getElementById('mobile-menu');
